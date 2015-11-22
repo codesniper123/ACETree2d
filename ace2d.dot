@@ -1,0 +1,50 @@
+digraph graphname{
+ratio="fill";margin=0;
+Node0 [shape=diamond label="Start"]
+Node0 -> Node1 [label="x 6-95"]
+Node1 [width=1 height=1 label ="(45 12) x 45"]
+Node1 -> Node2 [label="x 6-45"]
+Node2 [width=1 height=1 label ="(32 32) y 32"]
+Node2 -> Node3 [label="y 12-32"]
+Node3 [width=1 height=1 label ="(32 32) x 32"]
+Node3 -> Node4 [label="x 6-32"]
+Node4 [shape=rectangle width=0.5 height=0.5 label="0"]
+struct17 [shape=record label=" {x6-95|{ (55-66)}}|{x6-45|{ (30-45)}}|{y12-32|{}}|{x6-32|{}}"]
+Node4 -> struct17
+Node3 -> Node5 [label="x 33-45"]
+Node5 [shape=rectangle width=0.5 height=0.5 label="1"]
+struct21 [shape=record label=" {x6-95|{}}|{x6-45|{ (8-15)|(32-32)}}|{y12-32|{}}|{x33-45|{ (45-22)}}"]
+Node5 -> struct21
+Node2 -> Node6 [label="y 33-80"]
+Node6 [width=1 height=1 label ="(12 60) x 12"]
+Node6 -> Node7 [label="x 6-12"]
+Node7 [shape=rectangle width=0.5 height=0.5 label="2"]
+struct29 [shape=record label=" {x6-95|{}}|{x6-45|{}}|{y33-80|{ (10-80)}}|{x6-12|{ (12-34)|(12-60)}}"]
+Node7 -> struct29
+Node6 -> Node8 [label="x 13-45"]
+Node8 [shape=rectangle width=0.5 height=0.5 label="3"]
+struct33 [shape=record label=" {x6-95|{}}|{x6-45|{}}|{y33-80|{}}|{x13-45|{ (35-49)}}"]
+Node8 -> struct33
+Node1 -> Node9 [label="x 45-95"]
+Node9 [width=1 height=1 label ="(82 32) y 32"]
+Node9 -> Node10 [label="y 2-32"]
+Node10 [width=1 height=1 label ="(50 22) x 50"]
+Node10 -> Node11 [label="x 45-50"]
+Node11 [shape=rectangle width=0.5 height=0.5 label="4"]
+struct45 [shape=record label=" {x6-95|{}}|{x45-95|{ (52-80)}}|{y2-32|{ (55-2)}}|{x45-50|{ (50-22)}}"]
+Node11 -> struct45
+Node10 -> Node12 [label="x 51-95"]
+Node12 [shape=rectangle width=0.5 height=0.5 label="5"]
+struct49 [shape=record label=" {x6-95|{ (6-12)}}|{x45-95|{}}|{y2-32|{ (49-12)}}|{x51-95|{}}"]
+Node12 -> struct49
+Node9 -> Node13 [label="y 33-88"]
+Node13 [width=1 height=1 label ="(55 66) x 55"]
+Node13 -> Node14 [label="x 45-55"]
+Node14 [shape=rectangle width=0.5 height=0.5 label="6"]
+struct57 [shape=record label=" {x6-95|{ (45-12)|(35-20)}}|{x45-95|{}}|{y33-88|{}}|{x45-55|{}}"]
+Node14 -> struct57
+Node13 -> Node15 [label="x 56-95"]
+Node15 [shape=rectangle width=0.5 height=0.5 label="7"]
+struct61 [shape=record label=" {x6-95|{ (95-50)}}|{x45-95|{ (82-32)}}|{y33-88|{ (50-54)|(85-88)}}|{x56-95|{}}"]
+Node15 -> struct61
+}
