@@ -1,5 +1,6 @@
 package tools;
 
+
 public class Util {
 	/* 
 	 * utility class to calculate the height of the tree given the size 
@@ -15,4 +16,17 @@ public class Util {
 		assert N >= 0;
 		return 1 << N;
 	}
+	
+	protected static final int None = 0;			/* I do not like this name */
+	protected static final int Minimal = 1;
+	protected static final int Verbose = 2;
+	
+	protected static int debugLevel = Util.None;
+	
+	public static void log(int debugLevel, String formatStr, Object...args) {
+		if( Util.debugLevel >= debugLevel ) {
+			System.out.printf( formatStr,  args );
+		}
+	}
+	
 }

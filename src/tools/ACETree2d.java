@@ -15,6 +15,8 @@ import java.util.Comparator;
 import de.erichseifert.vectorgraphics2d.SVGGraphics2D;
 
 public class ACETree2d {
+	protected static boolean DEBUG = true;
+	
 	/* How was each node sorted by */
 	protected static final int SplitOnX = 1;
 	protected static final int SplitOnY  = 2;
@@ -247,7 +249,9 @@ public class ACETree2d {
 
 		/* calculate the height of the tree */
 		this.height = Util.getCeilingLog2(this.points.size()) - ACETree2d.LOG_LEAF_SIZE;
-		System.out.printf( "size of arr [%d] height [%d]\n", this.points.size(), this.height);
+		Util.log( Util.None, "ACETree - size of arr [%d] height [%d]\n", this.points.size(), this.height);
+		
+		assert this.height > 0;
 		
 		/*
 		 * The goal is to create internal nodes leading up to leaf nodes.
@@ -263,14 +267,14 @@ public class ACETree2d {
 		ArrayList<Range> xranges = new ArrayList<Range>();
 		ArrayList<Range> yranges = new ArrayList<Range>();
 
-		System.out.printf( "constructor - before sorting on X\n");
-		System.out.println(points);
+		Util.log( Util.Verbose, "constructor - before sorting on X\n");
+		Util.log( Util.Verbose, "%s", points);
 		
 		/* sort the list on X first */
 		Collections.sort( points, compareByX );
-		
-		System.out.printf( "constructor - after sorting\n");
-		System.out.println(points);
+
+		Util.log( Util.Verbose, "constructor - after sorting\n");
+		Util.log( Util.Verbose, "%s", points);
 
 		/* since we start with SplitOnX, create the range for the xranges */
 		Range r = new Range( points.get(0).x, points.get(points.size()-1).x);
@@ -349,15 +353,15 @@ public class ACETree2d {
 		int nextSplitOn = splitOn == SplitOnX ? SplitOnY : SplitOnX;		
 		
 		/* left child */
-		/* sort on the "next sort by"  - this allows for toggling */ 
-		System.out.printf( "left children- before sorting elements %d %d on %s\n", start, medianIndex, nextSplitOn == SplitOnX ? "x" : "y" );
-		System.out.println(points.subList(start,  medianIndex+1));
+		/* sort on the "next sort by"  - this allows for toggling */
+		Util.log( Util.Verbose, "left children- before sorting elements %d %d on %s\n", start, medianIndex, nextSplitOn == SplitOnX ? "x" : "y" );
+		Util.log( Util.Verbose, "%s", points.subList(start,  medianIndex+1));
 		
 		Collections.sort(points.subList(start,  medianIndex+1), nextSplitOn == SplitOnX ? compareByX : compareByY );
 
-		System.out.printf( "left children- after sorting on %s\n", nextSplitOn == SplitOnX ? "x" : "y" );
-		System.out.println(points.subList(start,  medianIndex+1));
-
+		Util.log( Util.Verbose, "left children- after sorting on %s\n", nextSplitOn == SplitOnX ? "x" : "y" );
+		Util.log( Util.Verbose, "%s", points.subList(start,  medianIndex+1));
+		
 		/* insert this into the appropriate ranges */
 		ranges.add( leftRange );
 		in.left = constructPhase1( currentHeight + 1, nextSplitOn, points, start, medianIndex, leftRange, xranges, yranges);
@@ -368,13 +372,13 @@ public class ACETree2d {
 
 		/* right child */
 		/* sort on the "next sort by"  - this allows for toggling */ 
-		System.out.printf( "right children - before sorting elements %d %d on %s\n", medianIndex + 1, end, nextSplitOn == SplitOnX ? "x" : "y" );
-		System.out.println(points.subList(medianIndex+1, end+1));
+		Util.log( Util.Verbose, "right children - before sorting elements %d %d on %s\n", medianIndex + 1, end, nextSplitOn == SplitOnX ? "x" : "y" );
+		Util.log( Util.Verbose, "%s", points.subList(medianIndex+1, end+1));
 		
 		Collections.sort(points.subList(medianIndex + 1,  end + 1), nextSplitOn == SplitOnX ? compareByX : compareByY );
 
-		System.out.printf( "right children- after sorting on %s\n", nextSplitOn == SplitOnX ? "x" : "y" );
-		System.out.println(points.subList(medianIndex+1, end+1));
+		Util.log( Util.Verbose, "right children- after sorting on %s\n", nextSplitOn == SplitOnX ? "x" : "y" );
+		Util.log( Util.Verbose, "%s", points.subList(medianIndex+1, end+1));
 
 		ranges.add( rightRange );
 		in.right = constructPhase1( currentHeight + 1, nextSplitOn, points, medianIndex+1, end, rightRange, xranges, yranges);
@@ -435,17 +439,17 @@ public class ACETree2d {
 		
 		/* print the records */
 		for( Record record : theRecords ) {
-			System.out.printf( "(%2d,%2d)", record.p.x, record.p.y );
+			Util.log( Util.Verbose, "(%2d,%2d)", record.p.x, record.p.y );
 		}
-		System.out.println();
+		Util.log( Util.Verbose, "\n" );
 		for( Record record : theRecords ) {
-			System.out.printf( "%7d", record.section );
+			Util.log( Util.Verbose, "%7d", record.section );
 		}
-		System.out.println();
+		Util.log( Util.Verbose, "\n" );
 		for( Record record : theRecords ) {
-			System.out.printf( "%7d", record.leafID );
+			Util.log( Util.Verbose, "%7d", record.leafID );
 		}
-		System.out.println();
+		Util.log( Util.Verbose, "\n" );
 		
 	}
 	
@@ -481,7 +485,7 @@ public class ACETree2d {
 			counter++;
 			if( in.splitOn == SplitOnX ) {
 				Node next = record.p.x <= in.p.x ? in.left : in.right;
-				System.out.printf( "X record [(%d) %d] Node [(%d) %d] Section [%d] Counter [%d] Choosing [%s]\n",
+				Util.log( Util.Verbose, "X record [(%d) %d] Node [(%d) %d] Section [%d] Counter [%d] Choosing [%s]\n",
 									record.p.x, record.p.y, in.p.x, in.p.y, record.section, counter, next == in.left ? "left" : "right" );
 				assignLeafID( next, counter, record); 
 			} else {
@@ -550,8 +554,10 @@ public class ACETree2d {
 		testResults(x, y, expected, query);
 	}
 	
-	private static void testResults(int x[], int y[], int expected[], Rect query) {
+	private static boolean testResults(int x[], int y[], int expected[], Rect query) {
 
+		boolean ret = false;
+		
 		/* Save the X, Y, results, and query in the file */
 		String testData = String.format( "data/data%d", testCounter++ ); 
 		try {
@@ -571,13 +577,17 @@ public class ACETree2d {
 			/* construct the tree */
 			ACETree2d tree = constructTree(createPointsArray(x,y), testData);
 			
-			/* a little wasteful, but our tree sorts the points so we cannot use it for validation :-( */
-			checkResults(createPointsArray(x,y), tree, query, expected, pwTestData);
-			
+			if( tree != null ) {
+				/* a little wasteful, but our tree sorts the points so we cannot use it for validation :-( */
+				ret = checkResults(createPointsArray(x,y), tree, query, expected, pwTestData);
+			}
+				
 			pwTestData.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return ret;
 	}
 	
 	private static ArrayList<Point> createPointsArray(int x[], int y[]) {
@@ -592,7 +602,12 @@ public class ACETree2d {
 		return points;
 	}
 	
-	private static ACETree2d constructTree(ArrayList<Point> points, String testData) {		
+	private static ACETree2d constructTree(ArrayList<Point> points, String testData) {
+		if( points.size() == 0 ) {
+			Util.log( Util.None, "constructTree called with zero length Points Array\n" );
+			return null;
+		}
+		
 		/* draw the points first */
 		drawPoints(testData, points);
 
@@ -620,8 +635,8 @@ public class ACETree2d {
 		return tree;
 	}
 	
-	private static void checkResults(ArrayList<Point> points, ACETree2d tree, Rect query, int expected[], PrintWriter pwTestData) {
-		System.out.printf( "points size %d expected size %d\n", points.size(), expected.length);
+	private static boolean checkResults(ArrayList<Point> points, ACETree2d tree, Rect query, int expected[], PrintWriter pwTestData) {
+		Util.log( Util.Minimal, "points size %d expected size %d\n", points.size(), expected.length);
 
 		assert points.size() == expected.length;
 		
@@ -645,14 +660,14 @@ public class ACETree2d {
 		for( Point p : points ) {
 			if( result.contains(p) ) {
 				if( expected[index] != 1) {
-					System.out.printf( "no match in expected array - index [%d] Point [%s]\n", index, p);
+					Util.log( Util.Minimal, "no match in expected array - index [%d] Point [%s]\n", index, p);
 					errCount++;
 					falsepositive++;
 				}
 			}
 			else {
 				if( expected[index] != 0) {
-					System.out.printf( "no match in expected array - index [%d] Point [%s]\n", index, p);
+					Util.log( Util.Minimal, "no match in expected array - index [%d] Point [%s]\n", index, p);
 					errCount++;
 					truenegative++;
 				}
@@ -661,9 +676,10 @@ public class ACETree2d {
 			index++;
 		}
 		
-		System.out.printf( "there are %d errors %d false positive and %d true negative \n", errCount, falsepositive, truenegative);
+		Util.log( Util.None, "there are %d errors %d false positive and %d true negative \n", errCount, falsepositive, truenegative);
 		pwTestData.printf( "there are %d errors %d false positive and %d true negative \n", errCount, falsepositive, truenegative);
 		
+		return errCount > 0 ? false : true;
 	}
 	
 	private static void drawPoints( String testData, ArrayList<Point> points) {
@@ -681,10 +697,16 @@ public class ACETree2d {
 	
 	private static void testMany() {
 		
+		int numSucceeded = 0;
 		for( int numTests = 0; numTests < ACETree2d.MaxNumTests; numTests++ ) {
-			System.out.printf( "Performing Test Iteration #%d\n",  numTests );
+			Util.log( Util.None, "Performing Test Iteration #%d\n",  numTests );
 			
-			int total = (int)(Math.random() * ACETree2d.MaxNumPoints);
+			/* minimum of 4 points -> we can revisit this later */
+			int total = 0;
+			while( total <= 4 ) {
+				total = (int)(Math.random() * ACETree2d.MaxNumPoints);
+			}
+			
 			int x[] = new int [total];
 			int y[] = new int [total];
 
@@ -708,8 +730,10 @@ public class ACETree2d {
 				
 			int expected[] = generateExpected(x,y,query);
 				
-			testResults(x, y, expected, query);
+			numSucceeded += testResults(x, y, expected, query) ? 1 : 0;
 		}
+		
+		Util.log( Util.None, "***  Number of tests [%d] Number of Successes [%d]\n", ACETree2d.MaxNumTests, numSucceeded );
 	}
 	
 	private static int [] generateExpected(int x[], int y[], Rect rect) {

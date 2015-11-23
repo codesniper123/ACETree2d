@@ -196,7 +196,7 @@ public class ACETree2dSearch {
 		 * The "partnerBucket == null can occur if the queryRect has a x coordinate that encapsulates the widest "x" we have.
 		 */
 		if( oneOfThem.flag == Bucket.BucketSet && (partnerBucket == null || partnerBucket.flag == Bucket.BucketSet || partnerBucket.flag == Bucket.BucketInvalid) ){
-			System.out.printf( "processing bucket 1 (section %d, leafid range %s) and bucket 2 (section %d leafid %s\n",
+			Util.log( Util.Verbose, "processing bucket 1 (section %d, leafid range %s) and bucket 2 (section %d leafid %s\n",
 							oneOfThem.section, oneOfThem.leafIDRange, 
 							partnerBucket != null ? partnerBucket.section : -1, 
 							partnerBucket != null ? partnerBucket.leafIDRange : "(empty)" ); 
@@ -219,7 +219,7 @@ public class ACETree2dSearch {
 	void dumpBuckets() {
 		int i = 0; 
 		for( Bucket bucket : buckets )  {
-			System.out.printf( "[%d] - %s\n", i, bucket );
+			Util.log(Util.Verbose, "[%d] - %s\n", i, bucket );
 			i++;
 		}
 	}
@@ -237,7 +237,7 @@ public class ACETree2dSearch {
 		
 		int bucketID = 0;
 		for( Bucket bucket : buckets ) {
-			System.out.printf( "[%d]: %s\n", bucketID, bucket );
+			Util.log(Util.Verbose, "[%d]: %s\n", bucketID, bucket );
 			bucketID++;
 		}
 	}
@@ -248,7 +248,7 @@ public class ACETree2dSearch {
 	 * You can call this repeatedly while checking for done().
 	 */
 	public ArrayList<Point> search() {
-		System.out.printf( "Searching with %s\n", this.queryRect );
+		Util.log(Util.Minimal,"Searching with %s\n", this.queryRect );
 		
 		ArrayList<Point> result = new ArrayList<Point>();
 		shuttle(tree.height, tree.root, this.queryRect, result);
@@ -381,7 +381,7 @@ public class ACETree2dSearch {
 	 * result:		points returned to the caller.
 	 */
 	private void shuttle(int height, Node node, Rect queryRect, ArrayList<Point> result) {
-		System.out.println( "shuttle with " + node);
+		Util.log(Util.Verbose, "shuttle with " + node);
 		
 		if( node instanceof LeafNode ) {
 			combineTuples(height, node, queryRect, result);
@@ -434,17 +434,17 @@ public class ACETree2dSearch {
 		assert n instanceof LeafNode;
 		LeafNode leaf = (LeafNode)n;
 		
-		System.out.printf( "combineTuples: leafNode index %d\n", leaf.leafID);
+		Util.log(Util.Verbose,"combineTuples: leafNode index %d\n", leaf.leafID);
 		
 		int section = 0;
 		for( ACETree2d.LeafSection leafSection : leaf.leafSections ) {			
-			System.out.printf( "combineTuples - section %d leafSection.r %s queryRect %s\n",  section, leafSection.r, queryRect);
+			Util.log(Util.Verbose,"combineTuples - section %d leafSection.r %s queryRect %s\n",  section, leafSection.r, queryRect);
 
 			if( leafSection.r.encapsulates( leafSection.splitOn == ACETree2d.SplitOnX ? queryRect.xrange : queryRect.yrange) ) {
-				System.out.printf( "section %d encapuslated - going to filter and add\n", section);
+				Util.log(Util.Verbose,"section %d encapuslated - going to filter and add\n", section);
 				filterAndAdd(queryRect, leafSection.points, result);
 			} else if( leafSection.r.overlaps(leafSection.splitOn == ACETree2d.SplitOnX ? queryRect.xrange : queryRect.yrange)) {
-				System.out.printf( "section %d overlaps - some more processing\n", section);
+				Util.log(Util.Verbose,"section %d overlaps - some more processing\n", section);
 				
 				/* get the right bucket for this */
 				int bucketID = getBucketIndex(height, section, leaf.getLeafIDs());
@@ -456,7 +456,7 @@ public class ACETree2dSearch {
 				checkAndProcessBuckets(height, queryRect, bucket, result);				
 			} else {
 				/* ignore section  - we could ascertain that the corresponding bucket is INVALID */
-				System.out.printf( "Ignoring section %d\n",  section);
+				Util.log(Util.Verbose,"Ignoring section %d\n",  section);
 			}
 			section++;
 		}
@@ -468,17 +468,17 @@ public class ACETree2dSearch {
 	private static void filterAndAdd(Rect queryRect, ArrayList<Point> src, ArrayList<Point> dest) {
 		boolean first = true;
 		for( Point pt : src ) {
-			if( first ) System.out.printf( "Filter and add " );
-			System.out.printf( "%s ", pt );
+			if( first ) Util.log(Util.Verbose,"Filter and add " );
+			Util.log(Util.Verbose, "%s ", pt );
 			if( queryRect.includes(pt) ) {
-				System.out.printf( " (added) ");
+				Util.log(Util.Verbose, " (added) ");
 				dest.add(pt);
 			} else {
-				System.out.printf( " (not added) ");
+				Util.log(Util.Verbose, " (not added) ");
 			}
 			first = false;
 		}
-		System.out.printf("\n");
+		Util.log(Util.Verbose, "\n");
 	}
 }
 
