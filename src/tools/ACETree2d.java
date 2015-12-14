@@ -1,6 +1,13 @@
 /*
  * tbd - need a drawing like: https://www.cs.umd.edu/class/spring2008/cmsc420/L19.kd-trees.pdf
  * tbd - need to fix the drawing we have and be able to draw the rectangle so we can see the solution easily
+ * tbd - bug when height == 1
+ * tbd - need to accommodate Rects instead of just points as source
+ * tbd - there was still a case when we returned zero points on Hathi.  I speculated that this may be due to a 
+ *       partial match of the partitions, but it needs to be verified.
+ * tbd - we need to return SOME points if they match;  if the first STAB yields an empty result, we need to try again.
+ * tbd - in AQWA, build the ACE Tree in addition to the R Tree
+ * tbd - SpatialHadoop integration?
  * 
  */
 
@@ -541,16 +548,16 @@ public class ACETree2d {
 	
 	public static void main(String args[] ) {
 		// test1();
-		testMany();
+		// testMany();
+		test2();
 	}
 	
-	private static void test1() {
-		/* data sets */
-		int x[] = 			{10, 30, 50, 55, 49, 12, 35, 85, 50, 32, 45, 55, 12, 6,  8,  35, 45, 52, 95, 82};
-		int y[] = 			{80, 45, 54, 66, 12, 34, 49, 88, 22, 32, 12, 2,  60, 12, 15, 20, 22, 80, 50, 32};
-		Rect query = new Rect(0,0,60,60);
-		int expected[] = 	{ 0,  1,  1,  0,  1,  1,  1,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  0,  0,  0};
-		
+	private static void test2() {
+		int x[] = 			{825, 825, 825, 825, 721, 825, 825, 825, 864, 876, 878, 878, 882 };
+		int y[] = 			{598, 612, 621, 627, 675, 653, 655, 645, 627, 645, 655, 659, 675 };
+		Rect query = 		new Rect(852, 608, 893, 677);
+		int expected[] = 	{  0,  0,   0,    0,   0,   0,   0,   0,   1,   1,   1,   1,   1 };
+	
 		testResults(x, y, expected, query);
 	}
 	

@@ -1,0 +1,98 @@
+digraph graphname{
+ratio="fill";margin=0;
+Node0 [shape=diamond label="Start"]
+Node0 -> Node1 [label="x 1-96"]
+Node1 [width=1 height=1 label ="(36 0) x 36"]
+Node1 -> Node2 [label="x 1-36"]
+Node2 [width=1 height=1 label ="(15 47) y 47"]
+Node2 -> Node3 [label="y 0-47"]
+Node3 [width=1 height=1 label ="(30 32) x 30"]
+Node3 -> Node4 [label="x 1-30"]
+Node4 [width=1 height=1 label ="(12 27) y 27"]
+Node4 -> Node5 [label="y 0-27"]
+Node5 [shape=rectangle width=0.5 height=0.5 label="0"]
+struct26 [shape=record label=" {x1-96|{}}|{x1-36|{ (16-93)}}|{y0-47|{}}|{x1-30|{ (23-20)}}|{y0-27|{ (12-27)}}"]
+Node5 -> struct26
+Node4 -> Node6 [label="y 28-47"]
+Node6 [shape=rectangle width=0.5 height=0.5 label="1"]
+struct31 [shape=record label=" {x1-96|{}}|{x1-36|{}}|{y0-47|{ (33-37)}}|{x1-30|{}}|{y28-47|{ (30-32)}}"]
+Node6 -> struct31
+Node3 -> Node7 [label="x 31-36"]
+Node7 [width=1 height=1 label ="(36 31) y 31"]
+Node7 -> Node8 [label="y 0-31"]
+Node8 [shape=rectangle width=0.5 height=0.5 label="2"]
+struct41 [shape=record label=" {x1-96|{ (33-32)|(60-68)}}|{x1-36|{}}|{y0-47|{}}|{x31-36|{}}|{y0-31|{ (36-0)|(36-12)|(36-31)}}"]
+Node8 -> struct41
+Node7 -> Node9 [label="y 32-47"]
+Node9 [shape=rectangle width=0.5 height=0.5 label="3"]
+struct46 [shape=record label=" {x1-96|{}}|{x1-36|{ (19-8)|(15-47)}}|{y0-47|{ (20-37)}}|{x31-36|{}}|{y32-47|{}}"]
+Node9 -> struct46
+Node2 -> Node10 [label="y 48-97"]
+Node10 [width=1 height=1 label ="(16 93) x 16"]
+Node10 -> Node11 [label="x 1-16"]
+Node11 [width=1 height=1 label ="(10 63) y 63"]
+Node11 -> Node12 [label="y 48-63"]
+Node12 [shape=rectangle width=0.5 height=0.5 label="4"]
+struct61 [shape=record label=" {x1-96|{}}|{x1-36|{ (1-96)}}|{y48-97|{}}|{x1-16|{}}|{y48-63|{ (10-63)}}"]
+Node12 -> struct61
+Node11 -> Node13 [label="y 64-97"]
+Node13 [shape=rectangle width=0.5 height=0.5 label="5"]
+struct66 [shape=record label=" {x1-96|{}}|{x1-36|{}}|{y48-97|{ (27-53)}}|{x1-16|{ (16-53)}}|{y64-97|{}}"]
+Node13 -> struct66
+Node10 -> Node14 [label="x 17-36"]
+Node14 [width=1 height=1 label ="(26 84) y 84"]
+Node14 -> Node15 [label="y 48-84"]
+Node15 [shape=rectangle width=0.5 height=0.5 label="6"]
+struct76 [shape=record label=" {x1-96|{ (68-92)}}|{x1-36|{}}|{y48-97|{ (4-56)|(33-97)}}|{x17-36|{}}|{y48-84|{}}"]
+Node15 -> struct76
+Node14 -> Node16 [label="y 85-97"]
+Node16 [shape=rectangle width=0.5 height=0.5 label="7"]
+struct81 [shape=record label=" {x1-96|{}}|{x1-36|{}}|{y48-97|{ (7-85)}}|{x17-36|{ (26-84)}}|{y85-97|{}}"]
+Node16 -> struct81
+Node1 -> Node17 [label="x 37-96"]
+Node17 [width=1 height=1 label ="(77 50) y 50"]
+Node17 -> Node18 [label="y 11-50"]
+Node18 [width=1 height=1 label ="(73 30) x 73"]
+Node18 -> Node19 [label="x 37-73"]
+Node19 [width=1 height=1 label ="(53 22) y 22"]
+Node19 -> Node20 [label="y 11-22"]
+Node20 [shape=rectangle width=0.5 height=0.5 label="8"]
+struct101 [shape=record label=" {x1-96|{}}|{x37-96|{ (67-13)}}|{y11-50|{ (53-22)}}|{x37-73|{ (69-11)|(40-47)}}|{y11-22|{}}"]
+Node20 -> struct101
+Node19 -> Node21 [label="y 23-50"]
+Node21 [shape=rectangle width=0.5 height=0.5 label="9"]
+struct106 [shape=record label=" {x1-96|{}}|{x37-96|{ (73-30)|(50-97)}}|{y11-50|{}}|{x37-73|{}}|{y23-50|{}}"]
+Node21 -> struct106
+Node18 -> Node22 [label="x 74-96"]
+Node22 [width=1 height=1 label ="(77 37) y 37"]
+Node22 -> Node23 [label="y 11-37"]
+Node23 [shape=rectangle width=0.5 height=0.5 label="10"]
+struct116 [shape=record label=" {x1-96|{}}|{x37-96|{}}|{y11-50|{}}|{x74-96|{}}|{y11-37|{ (76-23)|(76-34)}}"]
+Node23 -> struct116
+Node22 -> Node24 [label="y 38-50"]
+Node24 [shape=rectangle width=0.5 height=0.5 label="11"]
+struct121 [shape=record label=" {x1-96|{ (22-95)|(90-94)}}|{x37-96|{}}|{y11-50|{}}|{x74-96|{ (77-37)|(89-44)}}|{y38-50|{}}"]
+Node24 -> struct121
+Node17 -> Node25 [label="y 51-97"]
+Node25 [width=1 height=1 label ="(71 71) x 71"]
+Node25 -> Node26 [label="x 37-71"]
+Node26 [width=1 height=1 label ="(71 71) y 71"]
+Node26 -> Node27 [label="y 51-71"]
+Node27 [shape=rectangle width=0.5 height=0.5 label="12"]
+struct136 [shape=record label=" {x1-96|{ (77-50)}}|{x37-96|{ (38-42)}}|{y51-97|{}}|{x37-71|{}}|{y51-71|{ (53-53)}}"]
+Node27 -> struct136
+Node26 -> Node28 [label="y 72-97"]
+Node28 [shape=rectangle width=0.5 height=0.5 label="13"]
+struct141 [shape=record label=" {x1-96|{ (35-37)|(20-74)}}|{x37-96|{}}|{y51-97|{}}|{x37-71|{ (71-71)|(47-95)}}|{y72-97|{}}"]
+Node28 -> struct141
+Node25 -> Node29 [label="x 72-96"]
+Node29 [width=1 height=1 label ="(90 94) y 94"]
+Node29 -> Node30 [label="y 51-94"]
+Node30 [shape=rectangle width=0.5 height=0.5 label="14"]
+struct151 [shape=record label=" {x1-96|{}}|{x37-96|{}}|{y51-97|{}}|{x72-96|{}}|{y51-94|{}}"]
+Node30 -> struct151
+Node29 -> Node31 [label="y 95-97"]
+Node31 [shape=rectangle width=0.5 height=0.5 label="15"]
+struct156 [shape=record label=" {x1-96|{ (79-72)}}|{x37-96|{ (90-95)}}|{y51-97|{ (83-84)|(96-97)}}|{x72-96|{}}|{y95-97|{}}"]
+Node31 -> struct156
+}

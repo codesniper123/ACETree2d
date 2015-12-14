@@ -1,0 +1,26 @@
+digraph graphname{
+ratio="fill";margin=0;
+Node0 [shape=diamond label="Start"]
+Node0 -> Node1 [label="x 721-882"]
+Node1 [width=1 height=1 label ="(825 655) x 825"]
+Node1 -> Node2 [label="x 721-825"]
+Node2 [width=1 height=1 label ="(825 627) y 627"]
+Node2 -> Node3 [label="y 598-627"]
+Node3 [shape=rectangle width=0.5 height=0.5 label="0"]
+struct10 [shape=record label=" {x721-882|{ (825-645)}}|{x721-825|{}}|{y598-627|{ (825-627)}}"]
+Node3 -> struct10
+Node2 -> Node4 [label="y 628-675"]
+Node4 [shape=rectangle width=0.5 height=0.5 label="1"]
+struct13 [shape=record label=" {x721-882|{ (825-598)}}|{x721-825|{ (825-612)|(825-655)}}|{y628-675|{ (825-653)}}"]
+Node4 -> struct13
+Node1 -> Node5 [label="x 825-882"]
+Node5 [width=1 height=1 label ="(876 645) y 645"]
+Node5 -> Node6 [label="y 627-645"]
+Node6 [shape=rectangle width=0.5 height=0.5 label="2"]
+struct19 [shape=record label=" {x721-882|{ (721-675)}}|{x825-882|{ (876-645)}}|{y627-645|{ (864-627)}}"]
+Node6 -> struct19
+Node5 -> Node7 [label="y 646-675"]
+Node7 [shape=rectangle width=0.5 height=0.5 label="3"]
+struct22 [shape=record label=" {x721-882|{ (825-621)|(878-655)}}|{x825-882|{ (878-659)}}|{y646-675|{ (882-675)}}"]
+Node7 -> struct22
+}

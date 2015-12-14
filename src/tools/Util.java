@@ -21,7 +21,7 @@ public class Util {
 	protected static final int Minimal = 1;
 	protected static final int Verbose = 2;
 	
-	protected static int debugLevel = Util.None;
+	protected static int debugLevel = Util.Verbose;
 	
 	public static void log(int debugLevel, String formatStr, Object...args) {
 		if( Util.debugLevel >= debugLevel ) {

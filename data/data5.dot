@@ -1,0 +1,26 @@
+digraph graphname{
+ratio="fill";margin=0;
+Node0 [shape=diamond label="Start"]
+Node0 -> Node1 [label="x 2-90"]
+Node1 [width=1 height=1 label ="(54 63) x 54"]
+Node1 -> Node2 [label="x 2-54"]
+Node2 [width=1 height=1 label ="(54 63) y 63"]
+Node2 -> Node3 [label="y 13-63"]
+Node3 [shape=rectangle width=0.5 height=0.5 label="0"]
+struct10 [shape=record label=" {x2-90|{ (40-59)|(40-72)}}|{x2-54|{ (54-63)|(31-97)}}|{y13-63|{ (2-13)|(31-43)}}"]
+Node3 -> struct10
+Node2 -> Node4 [label="y 64-97"]
+Node4 [shape=rectangle width=0.5 height=0.5 label="1"]
+struct13 [shape=record label=" {x2-90|{ (72-21)|(90-94)}}|{x2-54|{}}|{y64-97|{}}"]
+Node4 -> struct13
+Node1 -> Node5 [label="x 55-90"]
+Node5 [width=1 height=1 label ="(69 60) y 60"]
+Node5 -> Node6 [label="y 8-60"]
+Node6 [shape=rectangle width=0.5 height=0.5 label="2"]
+struct19 [shape=record label=" {x2-90|{ (38-95)}}|{x55-90|{ (69-60)}}|{y8-60|{ (66-56)}}"]
+Node6 -> struct19
+Node5 -> Node7 [label="y 61-94"]
+Node7 [shape=rectangle width=0.5 height=0.5 label="3"]
+struct22 [shape=record label=" {x2-90|{}}|{x55-90|{ (77-8)|(80-73)}}|{y61-94|{ (85-70)}}"]
+Node7 -> struct22
+}

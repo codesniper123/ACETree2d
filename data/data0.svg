@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0mm" y="0mm" width="400mm" height="400mm" viewBox="0 0 400 400">
+<style type="text/css"><![CDATA[
+text { font:12px Dialog; }
+]]></style>
+<line x1="20" y1="200" x2="420" y2="200" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<line x1="20" y1="200" x2="20" y2="-200" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<line x1="20" y1="204" x2="20" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<line x1="40" y1="204" x2="40" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="37" y="206" style="font:4px Dialog">10</text>
+<line x1="60" y1="204" x2="60" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="57" y="206" style="font:4px Dialog">20</text>
+<line x1="80" y1="204" x2="80" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="77" y="206" style="font:4px Dialog">30</text>
+<line x1="100" y1="204" x2="100" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="97" y="206" style="font:4px Dialog">40</text>
+<line x1="120" y1="204" x2="120" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="117" y="206" style="font:4px Dialog">50</text>
+<line x1="140" y1="204" x2="140" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="137" y="206" style="font:4px Dialog">60</text>
+<line x1="160" y1="204" x2="160" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="157" y="206" style="font:4px Dialog">70</text>
+<line x1="180" y1="204" x2="180" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="177" y="206" style="font:4px Dialog">80</text>
+<line x1="200" y1="204" x2="200" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="197" y="206" style="font:4px Dialog">90</text>
+<line x1="220" y1="204" x2="220" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="217" y="206" style="font:4px Dialog">100</text>
+<line x1="240" y1="204" x2="240" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="237" y="206" style="font:4px Dialog">110</text>
+<line x1="260" y1="204" x2="260" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="257" y="206" style="font:4px Dialog">120</text>
+<line x1="280" y1="204" x2="280" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="277" y="206" style="font:4px Dialog">130</text>
+<line x1="300" y1="204" x2="300" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="297" y="206" style="font:4px Dialog">140</text>
+<line x1="320" y1="204" x2="320" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="317" y="206" style="font:4px Dialog">150</text>
+<line x1="340" y1="204" x2="340" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="337" y="206" style="font:4px Dialog">160</text>
+<line x1="360" y1="204" x2="360" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="357" y="206" style="font:4px Dialog">170</text>
+<line x1="380" y1="204" x2="380" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="377" y="206" style="font:4px Dialog">180</text>
+<line x1="400" y1="204" x2="400" y2="196" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="397" y="206" style="font:4px Dialog">190</text>
+<line x1="16" y1="200" x2="24" y2="200" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<line x1="16" y1="180" x2="24" y2="180" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="182" style="font:4px Dialog">10</text>
+<line x1="16" y1="160" x2="24" y2="160" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="162" style="font:4px Dialog">20</text>
+<line x1="16" y1="140" x2="24" y2="140" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="142" style="font:4px Dialog">30</text>
+<line x1="16" y1="120" x2="24" y2="120" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="122" style="font:4px Dialog">40</text>
+<line x1="16" y1="100" x2="24" y2="100" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="102" style="font:4px Dialog">50</text>
+<line x1="16" y1="80" x2="24" y2="80" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="82" style="font:4px Dialog">60</text>
+<line x1="16" y1="60" x2="24" y2="60" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="62" style="font:4px Dialog">70</text>
+<line x1="16" y1="40" x2="24" y2="40" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="42" style="font:4px Dialog">80</text>
+<line x1="16" y1="20" x2="24" y2="20" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="22" style="font:4px Dialog">90</text>
+<line x1="16" y1="0" x2="24" y2="0" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="2" style="font:4px Dialog">100</text>
+<line x1="16" y1="-20" x2="24" y2="-20" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-18" style="font:4px Dialog">110</text>
+<line x1="16" y1="-40" x2="24" y2="-40" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-38" style="font:4px Dialog">120</text>
+<line x1="16" y1="-60" x2="24" y2="-60" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-58" style="font:4px Dialog">130</text>
+<line x1="16" y1="-80" x2="24" y2="-80" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-78" style="font:4px Dialog">140</text>
+<line x1="16" y1="-100" x2="24" y2="-100" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-98" style="font:4px Dialog">150</text>
+<line x1="16" y1="-120" x2="24" y2="-120" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-118" style="font:4px Dialog">160</text>
+<line x1="16" y1="-140" x2="24" y2="-140" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-138" style="font:4px Dialog">170</text>
+<line x1="16" y1="-160" x2="24" y2="-160" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-158" style="font:4px Dialog">180</text>
+<line x1="16" y1="-180" x2="24" y2="-180" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="4" y="-178" style="font:4px Dialog">190</text>
+<line x1="1670" y1="-996" x2="1671" y2="-995" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1673" y="-994" style="font:4px Dialog">825,598</text>
+<line x1="1670" y1="-1024" x2="1671" y2="-1023" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1673" y="-1022" style="font:4px Dialog">825,612</text>
+<line x1="1670" y1="-1042" x2="1671" y2="-1041" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1673" y="-1040" style="font:4px Dialog">825,621</text>
+<line x1="1670" y1="-1054" x2="1671" y2="-1053" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1673" y="-1052" style="font:4px Dialog">825,627</text>
+<line x1="1462" y1="-1150" x2="1463" y2="-1149" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1465" y="-1148" style="font:4px Dialog">721,675</text>
+<line x1="1670" y1="-1106" x2="1671" y2="-1105" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1673" y="-1104" style="font:4px Dialog">825,653</text>
+<line x1="1670" y1="-1110" x2="1671" y2="-1109" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1673" y="-1108" style="font:4px Dialog">825,655</text>
+<line x1="1670" y1="-1090" x2="1671" y2="-1089" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1673" y="-1088" style="font:4px Dialog">825,645</text>
+<line x1="1748" y1="-1054" x2="1749" y2="-1053" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1751" y="-1052" style="font:4px Dialog">864,627</text>
+<line x1="1772" y1="-1090" x2="1773" y2="-1089" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1775" y="-1088" style="font:4px Dialog">876,645</text>
+<line x1="1776" y1="-1110" x2="1777" y2="-1109" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1779" y="-1108" style="font:4px Dialog">878,655</text>
+<line x1="1776" y1="-1118" x2="1777" y2="-1117" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1779" y="-1116" style="font:4px Dialog">878,659</text>
+<line x1="1784" y1="-1150" x2="1785" y2="-1149" style="fill:none;stroke:rgb(0,0,0);stroke-linecap:square" />
+<text x="1787" y="-1148" style="font:4px Dialog">882,675</text>
+</svg>
